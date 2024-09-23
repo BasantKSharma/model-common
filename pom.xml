@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.4</version>
+        <relativePath/>
+    </parent>
+    <groupId>com.gogo</groupId>
+    <artifactId>model-common</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>model-common</name>
+    <packaging>pom</packaging>
+    <description>Common model utility</description>
+
+    <properties>
+        <java.version>17</java.version>
+        <spring.doc.openapi.mvc.version>2.3.0</spring.doc.openapi.mvc.version>
+        <spring.doc.openapi.ui.version>1.8.0</spring.doc.openapi.ui.version>
+        <lombok.version>1.18.30</lombok.version>
+        <io.swagger.core.version>2.2.20</io.swagger.core.version>
+        <spring.cloud.version>4.1.0</spring.cloud.version>
+        <spring.webflux.version>6.1.4</spring.webflux.version>
+        <graphql.kickstart.version>15.1.0</graphql.kickstart.version>
+        <azure.webapp.maven.plugin.version>2.13.0</azure.webapp.maven.plugin.version>
+        <io.jsonwebtoken.version>0.12.3</io.jsonwebtoken.version>
+        <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
+        <modelmapper.version>3.2.0</modelmapper.version>
+        <org.webjars.bootstrap.version>5.3.3</org.webjars.bootstrap.version>
+        <org.webjars.jquery.version>3.7.1</org.webjars.jquery.version>
+        <org.mapsrtuct.version>1.5.5.Final</org.mapsrtuct.version>
+        <org.hibernate.version>6.4.4.Final</org.hibernate.version>
+
+        <shopping.common.domain.version>1.0.0-SNAPSHOT</shopping.common.domain.version>
+        <shopping.common.data.version>1.0.0-SNAPSHOT</shopping.common.data.version>
+        <shopping.common.basicauth.version>1.0.0-SNAPSHOT</shopping.common.basicauth.version>
+        <shopping.common.oauth2.version>1.0.0-SNAPSHOT</shopping.common.oauth2.version>
+        <shopping.common.apigateway.version>1.0.0-SNAPSHOT</shopping.common.apigateway.version>
+
+        <image-name>basantkrsharma/${artifactId}</image-name>
+        <image-version>1.0</image-version>
+    </properties>
+
+    <modules>
+        <module>common-domain</module>
+        <module>common-data-jpa</module>
+        <module>common-communication</module>
+    </modules>
+
+    <repositories>
+        <repository>
+            <id>confluent</id>
+            <url>https://packages.confluent.io/maven/</url>
+        </repository>
+    </repositories>
+
+
+    <dependencies>
+        <!-- Spring web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Documentation -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>${spring.doc.openapi.mvc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>${io.swagger.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${spring.doc.openapi.ui.version}</version>
+        </dependency>
+
+        <!-- Dev tools -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+            <!-- Provided = dependency is analysed only during compilation. NOT packaged in final jar -->
+            <!-- E.g., lombok generates getter/setter and converts to bytecode -->
+            <!-- Once its work is done, lombok is NO longer required during runtime, hence not part of final package -->
+        </dependency>
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>${modelmapper.version}</version>
+        </dependency>
+
+        <!-- Project -->
+    </dependencies>
+
+</project>
