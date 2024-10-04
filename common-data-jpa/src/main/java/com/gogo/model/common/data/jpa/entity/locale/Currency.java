@@ -1,7 +1,6 @@
-package com.gogo.model.common.data.jpa.entity.setting;
+package com.gogo.model.common.data.jpa.entity.locale;
 
 import com.gogo.model.common.data.jpa.entity.AbstractEntity;
-import com.gogo.model.common.data.jpa.entity.product.Country;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,19 +13,16 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 @Entity
 @Getter
 @Setter
-@Table(name = "state")
+@Table(name = "currency")
 @ConditionalOnProperty(name = "spring.shopping.table", havingValue = "true")
-public class State extends AbstractEntity {
+public class Currency extends AbstractEntity {
 
-	@Column(nullable = false, length = 45)
-	private String name;
-	
-	@ManyToOne
-	@JoinColumn(name = "country_id")
-	private Country country;
+    @Column(nullable = false, length = 64)
+    private String name;
 
-	@Override
-	public String toString() {
-		return "State [id=" + id + ", name=" + name + "]";
-	}
+    @Column(nullable = false, length = 3)
+    private String symbol;
+
+    @Column(nullable = false, length = 4)
+    private String code;
 }

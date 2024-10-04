@@ -1,4 +1,4 @@
-package com.gogo.model.common.data.jpa.entity.product;
+package com.gogo.model.common.data.jpa.entity.locale;
 
 import com.gogo.model.common.data.jpa.entity.AbstractEntity;
 import jakarta.persistence.*;
@@ -8,19 +8,24 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
-@NoArgsConstructor(force = true)
 @AllArgsConstructor
+@NoArgsConstructor
+@Entity
 @Getter
 @Setter
-@Entity
-@Table(name = "product_image")
+@Table(name = "state")
 @ConditionalOnProperty(name = "spring.shopping.table", havingValue = "true")
-public class ProductImage extends AbstractEntity {
+public class State extends AbstractEntity {
 
-    @Column(name = "name", nullable = false)
-    private String name;
+	@Column(nullable = false, length = 45)
+	private String name;
+	
+	@ManyToOne
+	@JoinColumn(name = "country_id")
+	private Country country;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
+	@Override
+	public String toString() {
+		return "State [id=" + id + ", name=" + name + "]";
+	}
 }

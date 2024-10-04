@@ -1,8 +1,8 @@
 package com.gogo.model.common.data.jpa.entity.user;
 
-import com.gogo.model.common.data.jpa.entity.product.Country;
-import com.gogo.model.common.data.jpa.entity.setting.State;
+import com.gogo.model.common.data.jpa.entity.locale.Country;
 import com.gogo.model.common.data.jpa.entity.AbstractEntity;
+import com.gogo.model.common.data.jpa.entity.locale.State;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
