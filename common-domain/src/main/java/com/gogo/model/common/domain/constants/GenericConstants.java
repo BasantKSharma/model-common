@@ -7,14 +7,9 @@ import org.springframework.stereotype.Component;
 public class GenericConstants {
 
 
-    public static final String APPLICATION_NAME = "shopping-app";
+    public static final String APPLICATION_NAME = "TODO";
 
     public static String ABSOLUTE_FILE_PATH_IMAGE_FOLDER = "/Users/basantsharma/DriveB/workspace/java/shopping-app/shopping-reference/image/";
-
-    @Value("${shopping.app.ui.images.location}")
-    public void setFilePathImage(String location) {
-        GenericConstants.ABSOLUTE_FILE_PATH_IMAGE_FOLDER = location;
-    }
 
     public static final String RELATIVE_FILE_PATH_IMAGE_FOLDER =
             ABSOLUTE_FILE_PATH_IMAGE_FOLDER.substring(ABSOLUTE_FILE_PATH_IMAGE_FOLDER.indexOf(APPLICATION_NAME) + APPLICATION_NAME.length());
@@ -75,28 +70,4 @@ public class GenericConstants {
 
     public static final String NEW_LINE = "\n";
 
-    @Value("${shopping.app.entities.per.page:18}")
-    public void setEntitiesPerPage(Integer entitiesPerPage) {
-        GenericConstants.ENTITIES_PER_PAGE = entitiesPerPage;
-    }
-
-    @Value("${shopping.app.products.per.page:10}")
-    public void setProductsPerPage(Integer productsPerPage) {
-        GenericConstants.PRODUCTS_PER_PAGE = productsPerPage;
-    }
-
-    @Value("${shopping.app.customers.per.page:18}")
-    public void setCustomersPerPage(Integer customersPerPage) {
-        GenericConstants.CUSTOMERS_PER_PAGE = customersPerPage;
-    }
-
-    @Value("${shopping.app.users.per.page:18}")
-    public void setUsersPerPage(Integer usersPerPage) {
-        GenericConstants.USERS_PER_PAGE = usersPerPage;
-    }
-
-    @Value("${shopping.app.search.results.per.page:10}")
-    public void setSearchResultsPerPage(Integer searchResultsPerPage) {
-        GenericConstants.SEARCH_RESULTS_PER_PAGE = searchResultsPerPage;
-    }
 }
