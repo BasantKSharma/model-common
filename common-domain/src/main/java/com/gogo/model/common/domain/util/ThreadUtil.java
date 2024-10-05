@@ -5,7 +5,6 @@ import java.util.concurrent.TimeUnit;
 public final class ThreadUtil {
 
     public static void sleep(TimeUnit timeUnit, int duration) {
-        LogUtil.logInfo("Sleeping for duration [" + duration + " " + timeUnit.name() + "]");
         try {
             if (timeUnit.equals(TimeUnit.SECONDS)) {
                 Thread.sleep(TimeUnit.SECONDS.toSeconds(duration));
