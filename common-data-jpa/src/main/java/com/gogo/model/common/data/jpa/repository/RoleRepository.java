@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-@ConditionalOnProperty(name = "spring.application.name", havingValue = "shopping-service-user")
+@ConditionalOnProperty(name = "spring.application.name", havingValue = "common-security")
 public interface RoleRepository extends CrudRepository<Role, Long> {
 
     Optional<Role> findByName(String roleName);

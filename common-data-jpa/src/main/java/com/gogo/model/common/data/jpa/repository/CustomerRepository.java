@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
  * Repository for Customer entity
  * **/
 @Repository
-@ConditionalOnProperty(name = "spring.application.name", havingValue = "shopping-service-user")
+@ConditionalOnProperty(name = "spring.application.name", havingValue = "common-security")
 public interface CustomerRepository extends SearchRepository<Customer, Long> {
 
     @Query("SELECT c FROM Customer c WHERE c.email = ?1")

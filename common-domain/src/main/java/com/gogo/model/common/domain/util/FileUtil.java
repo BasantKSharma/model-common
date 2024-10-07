@@ -1,6 +1,7 @@
 package com.gogo.model.common.domain.util;
 
 import com.gogo.model.common.domain.constants.FileConstants;
+import com.gogo.model.common.domain.dto.user.UserDto;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -12,8 +13,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-import static com.gogo.model.common.domain.constants.GenericConstants.FILE_PATH_EXTRAS;
-import static com.gogo.model.common.domain.constants.GenericConstants.FORWARD_SLASH;
+import static com.gogo.model.common.domain.constants.GenericConstants.*;
 
 /**
  * File utility methods
@@ -160,4 +160,11 @@ public final class FileUtil {
         return extraImage;
     }
 
+    public static String getImageFolder(Class clazz) {
+        if (UserDto.class.isAssignableFrom(clazz)) {
+            return RELATIVE_FILE_PATH_IMAGE_FOLDER_USER;
+        }
+
+        throw new RuntimeException("Folder not configured for class " + clazz);
+    }
 }

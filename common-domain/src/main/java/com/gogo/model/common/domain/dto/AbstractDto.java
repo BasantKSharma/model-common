@@ -2,10 +2,12 @@ package com.gogo.model.common.domain.dto;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.gogo.model.common.domain.exception.NotImplementedException;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.beans.Transient;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
@@ -44,10 +46,10 @@ public class AbstractDto implements Serializable {
     public Object getCustomMapProperty(String key) {
         return customMap.get(key);
     }
-//
-//    @Transient
-//    @JsonIgnore
-//    protected String getIdentifier(){
-//        throw new NotImplementedException("getIdentifier()");
-//    }
+
+    @Transient
+    @JsonIgnore
+    protected String getIdentifier(){
+        throw new NotImplementedException("getIdentifier()");
+    }
 }

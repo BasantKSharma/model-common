@@ -11,7 +11,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@ConditionalOnProperty(name = "spring.application.name", havingValue = "shopping-service-user")
+@ConditionalOnProperty(name = "spring.application.name", havingValue = "common-security")
 public interface UserRepository extends SearchRepository<User, Long> {
 
 	@Query("SELECT u FROM User u WHERE u.email = :email")

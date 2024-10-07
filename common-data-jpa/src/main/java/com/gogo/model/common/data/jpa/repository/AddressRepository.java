@@ -14,7 +14,7 @@ import java.util.List;
  * Repository for Address entity
  **/
 @Repository
-@ConditionalOnProperty(name = "spring.application.name", havingValue = "shopping-service-user")
+@ConditionalOnProperty(name = "spring.application.name", havingValue = "common-security")
 public interface AddressRepository extends CrudRepository<Address, Long> {
 
     public List<Address> findByCustomer(Customer customer);
